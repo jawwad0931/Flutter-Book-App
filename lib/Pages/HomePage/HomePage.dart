@@ -1,4 +1,5 @@
 import 'package:bookstore_app/Components/BookCard.dart';
+import 'package:bookstore_app/Components/BookTile.dart';
 import 'package:bookstore_app/Models/Data.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/Appbar.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/categorywidget.dart';
@@ -74,9 +75,9 @@ class HomePage extends StatelessWidget {
             ),
             // ======================================================================video stop 1 hour 55 min stop
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: const Row(
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Row(
                 children: [
                   Text("Your Interests"),
                 ],
@@ -84,26 +85,16 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Column(
-              children: [
-                Container(
-                  color: Color.fromARGB(255, 255, 241, 241),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          child: Image.asset(
-                            "Assets/images/4735.jpg",
-                            // "Assets/images/4735.jpg",
-                            width: 130,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            )
+                children: bookData
+                    .map((element) => BookTiles(
+                          title: element.title!,
+                          author: element.aboutAuthor!,
+                          coverUrl: element.coverUrl!,
+                          price: element.price!,
+                          rating: element.rating!,
+                          numberofRating: element.numberofRating!,
+                        ))
+                    .toList()),
           ],
         ),
       ),
