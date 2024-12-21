@@ -12,10 +12,10 @@ class HomeAppBar extends StatelessWidget {
         // SvgPicture.asset(
         //   "assets/images/4735.svg",
         // )
-        Text("data"),
-        Text("E-Book"),
+        const Text("data"),
+        const Text("E-Book"),
         CircleAvatar(
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           child: const Text("j",
               style: TextStyle(
                 color: Colors.yellow,

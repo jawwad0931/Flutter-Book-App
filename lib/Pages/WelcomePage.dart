@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           Container(
             height: 500,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             color: Theme.of(context).colorScheme.primary,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
                         'Assets/images/4735.jpg',
                         width: 300,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       Text(
@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Flexible(
@@ -59,7 +59,7 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: Column(
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -85,7 +85,7 @@ class MyHomePage extends StatelessWidget {
             child: Primarybutton(
                 btnName: "Continue",
                 onTap: () {
-                  Get.offAll(HomePage());
+                  Get.offAll(const HomePage());
                 }),
           ),
         ],

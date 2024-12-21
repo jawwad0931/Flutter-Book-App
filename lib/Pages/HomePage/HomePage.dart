@@ -1,11 +1,14 @@
 import 'package:bookstore_app/Components/BookCard.dart';
 import 'package:bookstore_app/Components/BookTile.dart';
 import 'package:bookstore_app/Models/Data.dart';
+import 'package:bookstore_app/Pages/BookDetails/BookDetail.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/Appbar.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/categorywidget.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/greeting.dart';
 import 'package:bookstore_app/Pages/HomePage/widget/myInputfield.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -68,7 +71,9 @@ class HomePage extends StatelessWidget {
                     .map((e) => BookCard(
                           coverUrl: e.coverUrl!,
                           title: e.title!,
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(const BookDetails());
+                          },
                         ))
                     .toList(),
               ),
