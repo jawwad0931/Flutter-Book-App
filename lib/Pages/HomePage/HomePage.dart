@@ -72,7 +72,10 @@ class HomePage extends StatelessWidget {
                           coverUrl: e.coverUrl!,
                           title: e.title!,
                           onTap: () {
-                            Get.to(const BookDetails());
+                            Get.to(BookDetails(
+                              // yahan book ka model use ho raha hai jo humne bookdetail mai banaya hai
+                              book: e,
+                            ));
                           },
                         ))
                     .toList(),
@@ -93,7 +96,7 @@ class HomePage extends StatelessWidget {
                 children: bookData
                     .map((element) => BookTiles(
                           title: element.title!,
-                          author: element.aboutAuthor!,
+                          author: element.author!,
                           coverUrl: element.coverUrl!,
                           price: element.price!,
                           rating: element.rating!,

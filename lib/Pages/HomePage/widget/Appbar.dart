@@ -1,4 +1,7 @@
+import 'package:bookstore_app/Pages/Profilepage.dart/Profilepage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -12,14 +15,19 @@ class HomeAppBar extends StatelessWidget {
         // SvgPicture.asset(
         //   "assets/images/4735.svg",
         // )
-        const Text("data"),
-        const Text("E-Book"),
-        CircleAvatar(
-          backgroundColor: Theme.of(context).colorScheme.surface,
-          child: const Text("j",
-              style: TextStyle(
-                color: Colors.yellow,
-              )),
+        Text("data"),
+        Text("E-Book"),
+        InkWell(
+          onTap: () {
+            Get.to(ProfilePage());
+          },
+          child: CircleAvatar(
+            backgroundColor: Theme.of(context).colorScheme.surface,
+            child: const Text("j",
+                style: TextStyle(
+                  color: Colors.yellow,
+                )),
+          ),
         )
       ],
     );

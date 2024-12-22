@@ -1,9 +1,11 @@
+import 'package:bookstore_app/Models/bookModel.dart';
 import 'package:bookstore_app/Pages/BookDetails/BookActionBtn.dart';
 import 'package:bookstore_app/Pages/BookDetails/HeaderWidget.dart';
 import 'package:flutter/material.dart';
 
 class BookDetails extends StatelessWidget {
-  const BookDetails({super.key});
+  final BookModel book;
+  const BookDetails({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +16,23 @@ class BookDetails extends StatelessWidget {
           children: [
             // Header Section
             Container(
-              child: const BookDetailHeader(),
+              child: BookDetailHeader(
+                coverUrl: book.coverUrl ?? "", // Provide default value if null
+                title: book.title ?? "Unknown Title",
+                author: book.author ?? "Unknown Author",
+                description: book.description ?? "No description available.",
+                rating: book.rating?.toString() ??
+                    "0.0", // Convert rating to string
+                pages: book.pages ?? 0, // Default to 0 if pages is null
+                language: book.language ?? "Unknown Language",
+                audioLength:
+                    book.audioLength ?? "N/A", // Default to "N/A" if null
+              ),
             ),
             const SizedBox(height: 20),
 
             // About Book Section
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +46,8 @@ class BookDetails extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Some lorem content. If you don't know, now you know! This is a placeholder description for the book.",
+                    book.description!,
+                    // "Some lorem content. If you don't know, now you know! This is a placeholder description for the book.",
                     style: TextStyle(
                       fontSize: 12,
                       height: 1.5, // Improves text readability
@@ -41,7 +55,7 @@ class BookDetails extends StatelessWidget {
                   ),
                   // Ye iske neechay  uper wala code hi duplicate kiya gaya hai
                   Text(
-                    "About Book",
+                    "About Author",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -49,7 +63,8 @@ class BookDetails extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Some lorem content. If you don't know, now you know! This is a placeholder description for the book.",
+                    // "Some lorem content. If you don't know, now you know! This is a placeholder description for the book.",
+                    book.aboutAuthor!,
                     style: TextStyle(
                       fontSize: 12,
                       height: 1.5, // Improves text readability

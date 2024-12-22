@@ -82,6 +82,8 @@ class BookModel {
     }
   }
 
+  get audioLength => null;
+
   static List<BookModel> fromList(List<Map<String, dynamic>> list) {
     return list.map(BookModel.fromJson).toList();
   }

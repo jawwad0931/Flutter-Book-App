@@ -2,7 +2,25 @@ import 'package:bookstore_app/Components/BackButton.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailHeader extends StatelessWidget {
-  const BookDetailHeader({super.key});
+  final String coverUrl;
+  final String title;
+  final String author;
+  final String description;
+  final String rating;
+  final int pages;
+  final String language;
+  final String audioLength;
+
+  const BookDetailHeader(
+      {super.key,
+      required this.title,
+      required this.coverUrl,
+      required this.author,
+      required this.description,
+      required this.rating,
+      required this.pages,
+      required this.language,
+      required this.audioLength});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +48,8 @@ class BookDetailHeader extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    "Assets/images/4735.jpg",
+                    // "Assets/images/4735.jpg",
+                    coverUrl,
                     width: 250,
                     height: 250,
                     fit: BoxFit.cover,
@@ -38,9 +57,10 @@ class BookDetailHeader extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Center(
+              Center(
                 child: Text(
-                  "Beach Town : A Novel",
+                  title,
+                  // "Beach Town : A Novel",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -48,9 +68,10 @@ class BookDetailHeader extends StatelessWidget {
                   ),
                 ),
               ),
-              const Center(
+              Center(
                 child: Text(
-                  "Author | J.K. Rowling",
+                  // "Author | J.K. Rowling",
+                  "Author | $author",
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white70,
@@ -58,17 +79,19 @@ class BookDetailHeader extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                "This is a special book for you. You will enjoy it whenever you access it. Seriously, this is a great read!",
+              Text(
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                description,
+                // "This is a special book for you. You will enjoy it whenever you access it. Seriously, this is a great read!",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.white,
                   height: 1.5,
                 ),
-                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
@@ -83,7 +106,8 @@ class BookDetailHeader extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "4.5",
+                        rating,
+                        // "4.5",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white70,
@@ -103,7 +127,8 @@ class BookDetailHeader extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "200",
+                        pages.toString(),
+                        // "200",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white70,
@@ -123,7 +148,8 @@ class BookDetailHeader extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "ENG",
+                        language,
+                        // "ENG",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white70,
@@ -143,7 +169,8 @@ class BookDetailHeader extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "2 Hr",
+                        audioLength,
+                        // "2 Hr",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white70,
