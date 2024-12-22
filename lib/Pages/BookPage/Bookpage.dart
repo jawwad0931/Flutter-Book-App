@@ -1,4 +1,8 @@
+import 'package:bookstore_app/Controller/PdfController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class BookPage extends StatefulWidget {
   const BookPage({super.key});
@@ -10,6 +14,7 @@ class BookPage extends StatefulWidget {
 class _BookPageState extends State<BookPage> {
   @override
   Widget build(BuildContext context) {
+    PdfController pdfController = Get.put(PdfController());
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(
@@ -22,7 +27,13 @@ class _BookPageState extends State<BookPage> {
         ),
         centerTitle: true,
       ),
-      body: const Text("Data"),
+      body: SfPdfViewer.network(
+        'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf',
+        key: pdfController.pdfViewerKey,
+      ),
     );
   }
 }
+
+
+// yahan issue hain video 2:49:52 per issue hai dekhna hoga
