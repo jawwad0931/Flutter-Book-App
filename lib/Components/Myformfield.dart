@@ -10,7 +10,8 @@ class MyFormField extends StatelessWidget {
       {super.key,
       required this.hintText,
       required this.icon,
-      required this.controller});
+      required this.controller,
+      required int maxLines});
 
   @override
   Widget build(BuildContext context) {

@@ -89,24 +89,29 @@ class AddNewBook extends StatelessWidget {
                     controller: controller,
                     hintText: "Enter Book Name",
                     icon: Icons.book,
+                    maxLines: 1,
                   ),
                   const SizedBox(height: 10),
                   MyFormField(
                     controller: controller,
                     hintText: "Author Name",
                     icon: Icons.person,
+                    maxLines: 1,
                   ),
                   const SizedBox(height: 10),
+
                   MyFormField(
                     controller: controller,
                     hintText: "Description",
                     icon: Icons.description,
+                    maxLines: 5,
                   ),
                   const SizedBox(height: 10),
                   MyFormField(
                     controller: controller,
                     hintText: "About Author",
                     icon: Icons.person,
+                    maxLines: 1,
                   ),
                   const SizedBox(
                     height: 10,
@@ -118,6 +123,7 @@ class AddNewBook extends StatelessWidget {
                       controller: controller,
                       hintText: "Price",
                       icon: Icons.currency_lira,
+                      maxLines: 1,
                     )),
                     const SizedBox(width: 10),
                     Expanded(
@@ -125,6 +131,7 @@ class AddNewBook extends StatelessWidget {
                       controller: controller,
                       hintText: "Pages",
                       icon: Icons.pageview_outlined,
+                      maxLines: 1,
                     ))
                   ]),
                   // yahan maine row banaya hua hai isliye ke mujhe dou text field aik row mai rakhna tha
@@ -135,6 +142,7 @@ class AddNewBook extends StatelessWidget {
                       controller: controller,
                       hintText: "Language",
                       icon: Icons.language,
+                      maxLines: 1,
                     )),
                     const SizedBox(width: 10),
                     Expanded(
@@ -142,6 +150,7 @@ class AddNewBook extends StatelessWidget {
                       controller: controller,
                       hintText: "Audio Len",
                       icon: Icons.audio_file_outlined,
+                      maxLines: 1,
                     ))
                   ]),
                 ],
